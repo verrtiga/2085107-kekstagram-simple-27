@@ -8,7 +8,7 @@ function getRandomPositiveNumber (a, b) {
   return Math.floor(result);
 }
 function checkStringLenght (string, length) {
-  return string.length <= length;
+  return string,length <= length;
 }
 
 getRandomPositiveNumber();
