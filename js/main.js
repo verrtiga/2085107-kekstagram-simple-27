@@ -1,8 +1,16 @@
-function randomNumber (min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomPositiveNumber (a, b) {
+  if ( a < 0 || b < 0 ) {
+    return NaN;
+  }
+  const lower = Math.ceil(Math.min(a,b));
+  const upper = Math.floor(Math.max(a,b));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
+}
+function checkStringLenght (string, length) {
+  return string.length <= length;
 }
 
-randomNumber();
+getRandomPositiveNumber();
+checkStringLenght();
 
