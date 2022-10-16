@@ -1,10 +1,20 @@
-const PHOTOS_ID = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 , 20, 21, 22, 23, 24, 25];
+let createPictureId = 0;
 const PHOTOS_DESCRIPTION = [
   'Классная фотка!',
-  'Меня бабушка сфоткает лучше',
-  'Палец на пол экрана...',
-  'Что за лев этот тигр'
+  'Это я вот на даче',
+  'Это я в Тайланде',
+  'Что за лев этот тигр...',
+  'Тайлунг'
 ];
+const LIKES_COUNT = {
+  MIN: 15,
+  MAX: 200
+};
+
+const COMMENTS_COUNT = {
+  MIN: 0,
+  MAX: 200
+};
 
 function getRandomPositiveNumber (a, b) {
   if ( a < 0 || b < 0 ) {
@@ -22,18 +32,22 @@ function stringLenght (string, length) {
 const getRandomArrayElement = function(elements) {
   return elements[getRandomPositiveNumber(0, elements.length - 1)];
 };
+const generatePictureId = function() {
+  return ++createPictureId;
+};
 
 const createPicture = function () {
 
   return {
-    id: getRandomArrayElement(PHOTOS_ID),
-    url:`photos/${[getRandomArrayElement(PHOTOS_ID)]}.jpg`,
+    id: generatePictureId(),
+    url:`photos/${[generatePictureId()]}.jpg`,
     description: getRandomArrayElement(PHOTOS_DESCRIPTION),
-    likes: getRandomPositiveNumber(15,200),
-    comments: getRandomPositiveNumber(0,200)
+    likes: getRandomPositiveNumber(LIKES_COUNT.MIN, LIKES_COUNT.MAX),
+    comments: getRandomPositiveNumber(COMMENTS_COUNT.MIN, COMMENTS_COUNT.MAX)
   };
 };
 const similarPicture = Array.from({length:25}, createPicture);
+
 
 similarPicture();
 getRandomPositiveNumber();
