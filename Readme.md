@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм (простой)»
 
 * Студент: [Роман Вертегел](https://up.htmlacademy.ru/javascript/27/user/2085107).
-* Наставник: [Дмитрий Гуляев](https://htmlacademy.ru/profile/dima).
+* Наставник: [Арсений Березин](https://htmlacademy.ru/profile/id263537).
 
 ---
 
