@@ -1,4 +1,4 @@
-import {createPicture} from './data.js';
+import {similarPicture} from './data.js';
 
 const userPictures = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').
@@ -7,11 +7,11 @@ const pictureTemplate = document.querySelector('#picture').
 const pictureElement = pictureTemplate.cloneNode(true);
 userPictures.appendChild(pictureElement);
 
-const similarPictures = createPicture();
+const somePictures = similarPicture();
 
 const similarListFtagment = document.createDocumentFragment();
 
-similarPictures.forEach(({url, likes, comments}) => {
+somePictures.forEach(({url, likes, comments}) => {
 
   const pictureElements = pictureTemplate.cloneNode(true);
   pictureElements.querySelector('.picture').src = url;
