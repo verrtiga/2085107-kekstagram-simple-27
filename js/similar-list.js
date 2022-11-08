@@ -1,5 +1,6 @@
 import {similarPicture} from './data.js';
 
+const somePictures = similarPicture();
 const userPictures = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').
   content.querySelector('.picture');
@@ -7,7 +8,6 @@ const pictureTemplate = document.querySelector('#picture').
 const pictureElement = pictureTemplate.cloneNode(true);
 userPictures.appendChild(pictureElement);
 
-const somePictures = similarPicture();
 
 const similarListFtagment = document.createDocumentFragment();
 

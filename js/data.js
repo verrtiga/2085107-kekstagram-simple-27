@@ -37,6 +37,4 @@ const createPicture = function () {
 };
 const similarPicture = Array.from({length:25}, createPicture);
 
-stringLenght();
-
 export {similarPicture};
