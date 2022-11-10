@@ -1,4 +1,4 @@
-import {getRandomPositiveNumber,stringLenght} from './util.js';
+import {getRandomPositiveNumber} from './util.js';
 
 let createPictureId = 0;
 const PHOTOS_DESCRIPTION = [

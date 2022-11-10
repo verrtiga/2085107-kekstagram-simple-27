@@ -7,7 +7,7 @@ function getRandomPositiveNumber (a, b) {
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
 }
-function stringLenght (string, length) {
+function stringLenght(string, length) {
   return string.length <= length;
 }
 export {getRandomPositiveNumber,stringLenght};
