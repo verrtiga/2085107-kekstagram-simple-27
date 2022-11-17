@@ -1,5 +1,6 @@
 import { renderSimilarList,clearSimilarList } from './similar-list.js';
 import { resetScale } from './scale.js';
+import { resetEffects } from './effect.js';
 
 const userModalElement = document.querySelector('body');
 const userModalOpenElement = document.querySelector('.img-upload__input');
@@ -26,6 +27,8 @@ function closeUserModal () {
   userModalOpenOverlay.classList.add('hidden');
   userForm.reset();
   resetScale();
+  resetEffects();
+
 
   clearSimilarList();
   document.removeEventListener('keydown', onPopupEscKeyDown);
