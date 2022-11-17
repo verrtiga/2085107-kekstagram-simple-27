@@ -6,3 +6,5 @@ import './user-form.js';
 import './scale.js';
 import './effect.js';
 import {similarPicture} from './data.js';
+
+similarPicture();
