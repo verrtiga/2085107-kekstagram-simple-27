@@ -8,11 +8,10 @@ import './effect.js';
 import {renderSimilarList} from './similar-list.js';
 import { setUserFormSubmit } from './user-form.js';
 import { closeUserModal } from './user-modal.js';
+import {getData} from './api.js';
 
-fetch('https://27.javascript.pages.academy/kekstagram-simple/data')
-  .then((response) => response.json())
-  .then((somePictures) => {
-    renderSimilarList(somePictures);
-  });
+getData((somePictures) => {
+  renderSimilarList(somePictures);
+});
 
 setUserFormSubmit(closeUserModal);
