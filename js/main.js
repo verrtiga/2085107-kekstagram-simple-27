@@ -5,6 +5,10 @@ import './user-modal.js';
 import './user-form.js';
 import './scale.js';
 import './effect.js';
-import {similarPicture} from './data.js';
+import {renderSimilarList} from './similar-list.js';
 
-similarPicture();
+fetch('https://27.javascript.pages.academy/kekstagram-simple/data')
+  .then((response) => response.json())
+  .then((somePictures) => {
+    renderSimilarList(somePictures);
+  });

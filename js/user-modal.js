@@ -1,4 +1,4 @@
-import { renderSimilarList,clearSimilarList } from './similar-list.js';
+
 import { resetScale } from './scale.js';
 import { resetEffects } from './effect.js';
 
@@ -17,7 +17,6 @@ const onPopupEscKeyDown = (evt) => {
 function openUserModal () {
   userModalElement.classList.add('modal-open');
   userModalOpenOverlay.classList.remove('hidden');
-  renderSimilarList();
   document.addEventListener('keydown', onPopupEscKeyDown);
 }
 
@@ -28,9 +27,6 @@ function closeUserModal () {
   userForm.reset();
   resetScale();
   resetEffects();
-
-
-  clearSimilarList();
   document.removeEventListener('keydown', onPopupEscKeyDown);
 }
 

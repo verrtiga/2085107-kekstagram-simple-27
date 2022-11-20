@@ -1,6 +1,4 @@
-import {similarPicture} from './data.js';
 
-const somePictures = similarPicture;
 const userPictures = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').
   content.querySelector('.picture');
@@ -11,7 +9,7 @@ const clearSimilarList = () => {
   userPictures.innerHTML = '';
 };
 
-const renderSimilarList = () => {
+const renderSimilarList = (somePictures) => {
   const similarListFragment = document.createDocumentFragment();
 
   somePictures.forEach(({url, likes, comments}) => {
