@@ -38,4 +38,4 @@ userModalCloseElement.addEventListener('click', () => {
   closeUserModal();
 });
 
-
+export {openUserModal, closeUserModal};
