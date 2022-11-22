@@ -14,11 +14,10 @@ const sendData = (onSuccess, onFail, body) => {
     },
   )
     .then((response) => {
-      if (response.ok) {
-        onSuccess();
-      } else {
+      if (!response.ok) {
         onFail('Не удалось отправить форму, попробуйте еще раз!');
       }
+      onSuccess();
     })
     .catch(() => {
       onFail('Не удалось отправить форму, попробуйте еще раз!');
