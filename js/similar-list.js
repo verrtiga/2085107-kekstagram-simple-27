@@ -15,7 +15,7 @@ const renderSimilarList = (somePictures) => {
   somePictures.forEach(({url, likes, comments}) => {
 
     const pictureElements = pictureTemplate.cloneNode(true);
-    pictureElements.querySelector('.picture').src = url;
+    pictureElements.querySelector('.picture__img').src = url;
     pictureElements.querySelector('.picture__likes').textContent = likes;
     pictureElements.querySelector('.picture__comments').textContent = comments;
     userPictures.appendChild(pictureElements);

@@ -1,5 +1,5 @@
-import { sendData } from './api';
-import { showAlert } from './util';
+import { sendData } from './api.js';
+import { showAlert } from './util.js';
 
 const form = document.querySelector('.img-upload__form');
 
