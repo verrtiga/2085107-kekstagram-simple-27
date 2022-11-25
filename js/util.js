@@ -10,17 +10,20 @@ const getRandomPositiveNumber = (a, b) => {
 };
 
 const ALERT_TIME = 5000;
+const isEscapeKey = (evt) => evt.key === 'Escape';
 const showAlert = (message) => {
   const alertContainer = document.createElement('div');
-  alertContainer.style.zIndex = '100';
   alertContainer.style.position = 'absolute';
-  alertContainer.style.left = '0';
+  alertContainer.style.zIndex = '100';
   alertContainer.style.top = '0';
-  alertContainer.style.right = '0';
-  alertContainer.style.padding = '10px 10px';
-  alertContainer.style.fontSize = '60px';
+  alertContainer.style.width = '100%';
+  alertContainer.style.height = '100%';
+  alertContainer.style.padding = '55px';
+  alertContainer.style.alignItems = 'center';
+  alertContainer.style.fontSize = '30px';
+  alertContainer.style.lineHeight = '50px';
   alertContainer.style.textAlign = 'center';
-  alertContainer.style.backgroundColor = 'red';
+  alertContainer.style.color = 'white';
 
   alertContainer.textContent = message;
 
@@ -33,4 +36,4 @@ const showAlert = (message) => {
 
 const stringLenght = (string, length) => string.length <= length;
 
-export {getRandomPositiveNumber,stringLenght, showAlert};
+export {getRandomPositiveNumber,stringLenght, showAlert, isEscapeKey};

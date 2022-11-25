@@ -5,9 +5,7 @@ import { resetEffects } from './effect.js';
 const userModalElement = document.querySelector('body');
 const uploadFile = document.querySelector('#upload-file');
 const uploadFileClose = document.querySelector('.img-upload__cancel');
-const userModalOpenElement = document.querySelector('.img-upload__input');
 const userModalOpenOverlay = document.querySelector('.img-upload__overlay');
-const userModalCloseElement = document.querySelector('.img-upload__cancel');
 const userForm = document.querySelector('.img-upload__form');
 const onPopupEscKeyDown = (evt) => {
   if (evt.key === 'Escape') {
@@ -32,15 +30,13 @@ function closeUserModal () {
   document.removeEventListener('keydown', onPopupEscKeyDown);
 }
 
-userModalOpenElement.addEventListener('click',() => {
+uploadFile.addEventListener('change',() => {
   openUserModal();
 });
 
-userModalCloseElement.addEventListener('click', () => {
+uploadFileClose.addEventListener('click', () => {
   closeUserModal();
 });
 
-uploadFileClose.addEventListener ('click', () => closeUserModal());
-uploadFile.addEventListener('change', openUserModal);
 
 export {openUserModal, closeUserModal};
