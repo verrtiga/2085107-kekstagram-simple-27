@@ -1,4 +1,4 @@
-function getRandomPositiveNumber (a, b) {
+const getRandomPositiveNumber = (a, b) => {
   if ( a < 0 || b < 0 ) {
     return NaN;
   }
@@ -7,7 +7,7 @@ function getRandomPositiveNumber (a, b) {
   const upper = Math.floor(Math.max(a,b));
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
-}
+};
 
 const ALERT_TIME = 5000;
 const showAlert = (message) => {
@@ -31,7 +31,6 @@ const showAlert = (message) => {
   }, ALERT_TIME);
 };
 
-function stringLenght(string, length) {
-  return string.length <= length;
-}
+const stringLenght = (string, length) => string.length <= length;
+
 export {getRandomPositiveNumber,stringLenght, showAlert};

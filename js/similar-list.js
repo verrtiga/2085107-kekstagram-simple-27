@@ -1,28 +1,27 @@
 
-const userPictures = document.querySelector('.pictures');
+const userPicture = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').
   content.querySelector('.picture');
 
-const pictureElement = pictureTemplate.cloneNode(true);
-userPictures.appendChild(pictureElement);
+
 const clearSimilarList = () => {
-  userPictures.innerHTML = '';
+  userPicture.innerHTML = '';
 };
 
-const renderSimilarList = (somePictures) => {
+const renderSimilarList = (somePicture) => {
   const similarListFragment = document.createDocumentFragment();
 
-  somePictures.forEach(({url, likes, comments}) => {
+  somePicture.forEach(({url, likes, comments}) => {
 
     const pictureElements = pictureTemplate.cloneNode(true);
     pictureElements.querySelector('.picture__img').src = url;
     pictureElements.querySelector('.picture__likes').textContent = likes;
     pictureElements.querySelector('.picture__comments').textContent = comments;
-    userPictures.appendChild(pictureElements);
+    userPicture.appendChild(pictureElements);
 
   });
 
-  userPictures.appendChild(similarListFragment);
+  userPicture.appendChild(similarListFragment);
 };
 
 export {renderSimilarList, clearSimilarList};

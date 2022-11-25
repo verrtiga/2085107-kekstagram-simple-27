@@ -1,8 +1,8 @@
 const getData = (onSucces) => {
   fetch('https://27.javascript.pages.academy/kekstagram-simple/data')
     .then((response) => response.json())
-    .then((somePictures) => {
-      onSucces(somePictures);
+    .then((somePicture) => {
+      onSucces(somePicture);
     });
 };
 
