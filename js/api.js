@@ -17,7 +17,6 @@ const sendData = (onSuccess, onFail, body) => {
       if (!response.ok) {
         onFail('Не удалось отправить форму, попробуйте еще раз!');
       }
-
       onSuccess();
     })
     .catch(() => {

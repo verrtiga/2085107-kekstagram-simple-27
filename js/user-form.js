@@ -5,12 +5,23 @@ import {userModalOpenOverlay} from './user-modal.js';
 
 const form = document.querySelector('.img-upload__form');
 const body = document.querySelector('body');
+const submitButton = document.querySelector('.img-upload__submit');
 
 const pristine = new Pristine(form, {
   classTo: 'img-upload__text',
   errorTextParent: 'img-upload__text',
   errorTextClass: 'error-img-upload__text',
 });
+
+const blockSubmitButton = () => {
+  submitButton.disabled = true;
+  submitButton.textContent = 'Публикую...';
+};
+
+const unblockSubmitButton = () => {
+  submitButton.disabled = false;
+  submitButton.textContent = 'Опубликовать';
+};
 
 const successTemplateElement = document.querySelector('#success')
   .content
@@ -76,13 +87,16 @@ const setUserFormSubmit = (onSuccess) => {
 
     const isValid = pristine.validate();
     if (isValid) {
+      blockSubmitButton();
       sendData(
         () => {
           onSuccess();
           getSuccessNotification();
+          unblockSubmitButton();
         },
         () => {
           getErrorNotification();
+          unblockSubmitButton();
         },
         new FormData(evt.target),
       );
@@ -90,5 +104,5 @@ const setUserFormSubmit = (onSuccess) => {
   });
 };
 
-export {setUserFormSubmit};
+export {setUserFormSubmit, getErrorNotification, getSuccessNotification};
 

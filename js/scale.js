@@ -6,10 +6,10 @@ const image = document.querySelector('.img-upload__default-img');
 const SCALE_STEP = 25;
 const MIN_SCALE = 25;
 const MAX_SCALE = 100;
-const DEFAULT_SCALE = 55;
+const DEFAULT_SCALE = 100;
 
 const scaleImage = ( value = DEFAULT_SCALE) => {
-  image.style.transform = `scale(${value / 100 })`;
+  image.style.transform = `scale(${value / DEFAULT_SCALE })`;
   scaleInput.value = `${value}`;
 };
 
