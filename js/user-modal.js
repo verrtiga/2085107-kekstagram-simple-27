@@ -39,4 +39,4 @@ uploadFileClose.addEventListener('click', () => {
 });
 
 
-export {openUserModal, closeUserModal};
+export {openUserModal, closeUserModal, onPopupEscKeyDown, userModalOpenOverlay};
