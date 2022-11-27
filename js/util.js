@@ -3,9 +3,9 @@ const getRandomPositiveNumber = (a, b) => {
     return NaN;
   }
 
-  const lower = Math.ceil(Math.min(a,b));
-  const upper = Math.floor(Math.max(a,b));
-  const result = Math.random() * (upper - lower + 1) + lower;
+  const lowValue = Math.ceil(Math.min(a,b));
+  const upValue = Math.floor(Math.max(a,b));
+  const result = Math.random() * (upValue - lowValue + 1) + lowValue;
   return Math.floor(result);
 };
 
