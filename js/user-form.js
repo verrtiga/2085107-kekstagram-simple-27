@@ -27,6 +27,7 @@ const successTemplateElement = document.querySelector('#success')
   .content
   .querySelector('.success');
 
+
 const errorTemplateElement = document.querySelector('#error')
   .content
   .querySelector('.error');
