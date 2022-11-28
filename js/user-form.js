@@ -105,5 +105,5 @@ const setUserFormSubmit = (onSuccess) => {
   });
 };
 
-export {setUserFormSubmit, getErrorNotification, getSuccessNotification};
+export {setUserFormSubmit, getErrorNotification, getSuccessNotification, removeNotification};
 
