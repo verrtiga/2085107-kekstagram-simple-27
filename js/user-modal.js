@@ -3,8 +3,8 @@ import { resetScale } from './scale.js';
 import { resetEffects } from './effect.js';
 
 const userModalElement = document.querySelector('body');
-const uploadFile = document.querySelector('#upload-file');
-const uploadFileClose = document.querySelector('.img-upload__cancel');
+const userFile = document.querySelector('#upload-file');
+const userFileCancel = document.querySelector('.img-upload__cancel');
 const userModalOpenOverlay = document.querySelector('.img-upload__overlay');
 const userForm = document.querySelector('.img-upload__form');
 const onPopupEscKeyDown = (evt) => {
@@ -30,11 +30,11 @@ function closeUserModal () {
   document.removeEventListener('keydown', onPopupEscKeyDown);
 }
 
-uploadFile.addEventListener('change',() => {
+userFile.addEventListener('change',() => {
   openUserModal();
 });
 
-uploadFileClose.addEventListener('click', () => {
+userFileCancel.addEventListener('click', () => {
   closeUserModal();
 });
 
