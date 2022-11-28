@@ -46,7 +46,7 @@ const onNotificationEscKeydown = (evt, notification) => {
 const removeNotification = (notification) => {
   notification.remove();
   document.removeEventListener('keydown', onNotificationEscKeydown);
-  document.addEventListener('keydown', onPopupEscKeyDown);
+  document.removeEventListener('keydown', onPopupEscKeyDown);
 };
 
 const onClickOutBounds = (evt, notification, targetClass) => {
@@ -75,6 +75,7 @@ const getErrorNotification = () => {
   const errorCloseButtonElement = errorModal.querySelector('.error__button');
   document.removeEventListener('keydown', onPopupEscKeyDown);
   document.addEventListener('keydown', (evt) => onNotificationEscKeydown(evt, errorModal));
+
 
   errorCloseButtonElement.addEventListener('click', () => removeNotification(errorModal), {once: true});
   errorModal.addEventListener( 'click', (evt) => onClickOutBounds(evt, errorModal, 'error__inner'));
